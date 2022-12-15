@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "inventory_model.proto";
+package inventorySystem;
+
+// Service to declare rpc methods
+service InventoryService {
+    rpc CreateBook (Book) returns (CreateBookResponse);
+    rpc GetBook (GetBookRequest) returns (GetBookResponse);
+}
+
+// response when CreateBook rpc is called by client
+message CreateBookResponse {
+    int32 statusCode = 1;
+    string reponseMessage = 2;
+}
+
+// request to call GetBook rpc by client
+message GetBookRequest {
+    string isbn = 1;
+}
+
+// response when GetBookResponse rpc is called by client
+message GetBookResponse {
+    int32 statusCode = 1;
+    string reponseMessage = 2;
+    Book book = 3;
+}
+

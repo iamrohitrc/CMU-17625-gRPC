@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package inventorySystem;
+
+// enum for various genres of books
+enum Genre {
+    ADVENTURE = 0;
+    BIOGRAPHY = 1;
+    SPORTS = 2;
+    TECHNOLOGY = 3;
+    MYSTERY = 4;
+}
+
+// Defination if entity - Book with various fields
+message Book {
+    string isbn = 1;
+    string title = 2;
+    string author = 3;
+    Genre genre = 4;
+    int32 year = 5;
+}
+
+// enum for status
+enum Status {
+    AVAILABLE = 0;
+    TOKEN = 1;
+}
+
+// This is a to hold a general item. Currently there is only one type of item i.e. Book
+message InventoryItem {
+    int32 number = 1;
+    oneof item {
+        Book book = 2;
+    }
+    Status Status = 3;
+}
