@@ -4,7 +4,6 @@ import grpc
 import sys
 sys.path.append("./service")
 import service.inventory_model_pb2 as inventory_model_pb2
-import service.inventory_model_pb2_grpc as inventory_model_pb2_grpc
 import service.inventory_service_pb2 as inventory_service_pb2
 import service.inventory_service_pb2_grpc as inventory_service_pb2_grpc
 
